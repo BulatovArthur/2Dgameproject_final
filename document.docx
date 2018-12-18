@@ -1,0 +1,49 @@
+Скрипт : Character
+
+1.new private RigidBody2D rigidbody // (Компонент для работы с rigidbody
+
+2. private Animator animator // (Компонент для работы с Анимацией
+
+3. private SpriteRenderer sprite // (Компонент для работы со спрайтом)
+
+4. private void Awake() // получаем ссылки на эти компоненты
+
+5. private void Update() //Метод в котором написано, когда вызывается та или иная функция
+
+6. private void Run() // Метод для бега персонажа
+
+7. private void Jump() // Метод для прыжка персонажа
+
+8. private void CheckGround()// Метод для проверки земли под персонажем
+
+9. private void Shoot() // Метод для стрельбы
+
+10. public ovveride void ReceiveDamage() // Метод получения урона персонажа
+
+Скрипт : Unit
+
+1. Public virtual void ReceiveDamage() // Метод получения урона
+
+2. Public virtual void Die() // Метод смерти персонажа
+
+3. Private void Start() // Метод для работы с пулей при появлении ее на экране
+
+Cкрипт : Bullet
+
+1. private Vector3 direction // Метод направления пули
+
+2. public Vector3 Direction // Метод для предоставления доступа к полю
+
+Скрипт Monster
+
+1. Private void OnTriggerEnter2D(Collider2D collider) // Метод для работы монстра с пулей
+
+Скрипт : CameraController
+
+1. Private void Awake() // Метод для работы с персонажем ( если его нет, он сам его перемещает)
+
+2. Private void Update() // Метод перемещения камеры
+
+Скрипт : MoveableMonster
+
+1. Private void Move() // Метод передвижения Монстра
