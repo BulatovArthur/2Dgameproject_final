@@ -1,0 +1,27 @@
+language: objective-c
+osx_image: xcode9.2
+rvm:
+- 2.2         #see before_install for getting RVM stable.
+
+env:
+- TRAVIS_TAG="1.0" PROJECT_NAME="UnityExamplePackage" UNITY_PROJECT_PATH="2Dgameproject" UNITY_DOWNLOAD_CACHE="$(pwd)/unity_download_cache" DEPLOY_UNITYPACKAGE="path set in deploy script" GITHUB_TOKEN=5903e0946e04e6ec5614fe942fcc39ca4d0dc266
+
+
+cache:
+  directories:
+    - $UNITY_DOWNLOAD_CACHE
+
+    
+before_install:
+- chmod a+x ./Scripts/*.sh
+
+install:
+- cat /etc/hosts
+- ./Scripts/install-unity.sh
+
+script:
+- ./Scripts/build.sh
+- ./Scripts/run-tests.sh
+
+after_success:
+- ./Scripts/export-unity-package.sh
